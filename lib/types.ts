@@ -43,8 +43,9 @@ export type SignalResult = {
 };
 
 export type ApiResponse = {
-  mode: "mock" | "live";
+  mode: "mock" | "coingecko" | "sosovalue";
   updatedAt: string;
   asset: AssetMarket;
   signal: SignalResult;
+  warning?: string;
 };

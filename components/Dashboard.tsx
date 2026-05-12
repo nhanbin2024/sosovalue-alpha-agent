@@ -86,6 +86,8 @@ export default function Dashboard() {
   }
 
   const { asset: market, signal, mode, updatedAt } = data;
+  const modeLabel = mode === "sosovalue" ? "Live SoSoValue API" : mode === "coingecko" ? "Live CoinGecko price" : "Demo data mode";
+  const footerModeLabel = mode === "sosovalue" ? "SoSoValue API" : mode === "coingecko" ? "CoinGecko live price" : "Mock demo";
 
   return (
     <main className="min-h-screen overflow-hidden">
@@ -103,7 +105,7 @@ export default function Dashboard() {
                       Buildathon Wave 1
                     </span>
                     <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/55">
-                      {mode === "live" ? "Live SoSoValue API" : "Demo data mode"}
+                      {modeLabel}
                     </span>
                   </div>
                   <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -253,7 +255,7 @@ export default function Dashboard() {
             <motion.footer variants={item} className="my-6 rounded-3xl border border-white/10 bg-white/[0.04] p-5 text-sm text-white/45">
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <p>
-                  Last update: {new Date(updatedAt).toLocaleString()} · Mode: {mode === "live" ? "Live API" : "Mock demo"}
+                  Last update: {new Date(updatedAt).toLocaleString()} · Mode: {footerModeLabel}
                 </p>
                 <p className="flex items-center gap-2">
                   <AlertTriangle className="h-4 w-4 text-warning" /> Research demo only. Not financial advice.
