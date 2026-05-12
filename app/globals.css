@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(106, 228, 255, 0.18), transparent 32rem),
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.20), transparent 34rem),
+    linear-gradient(180deg, #060712 0%, #0A0D18 45%, #05060D 100%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.glass {
+  border: 1px solid rgba(255,255,255,0.10);
+  background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.045));
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+  backdrop-filter: blur(18px);
+}
+
+.grid-mask {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.signal-gradient {
+  background: linear-gradient(135deg, rgba(106,228,255,0.22), rgba(139,92,246,0.18), rgba(52,211,153,0.16));
+}
